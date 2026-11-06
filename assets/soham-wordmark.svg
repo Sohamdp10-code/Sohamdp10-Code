@@ -1,13 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
-  <title id="title">SOHAM terminal wordmark</title>
+  <title id="title">sohamdp10-code terminal wordmark</title>
   <desc id="desc">An original terminal panel with a SOHAM ASCII wordmark.</desc>
+  <defs>
+    <clipPath id="typeReveal"><rect x="105" y="100" width="0" height="100"><animate attributeName="width" values="0;0;790" keyTimes="0;0.08;1" dur="2.5s" fill="freeze"/></rect></clipPath>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
   <rect width="1000" height="440" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
   <rect width="1000" height="48" rx="16" fill="#161b22"/>
   <circle cx="30" cy="24" r="7" fill="#ff5f56"/><circle cx="54" cy="24" r="7" fill="#ffbd2e"/><circle cx="78" cy="24" r="7" fill="#27c93f"/>
   <text x="500" y="30" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="15" fill="#8b949e">sohamdp10-code@github: ~ $ ./identity.sh</text>
-  <text x="500" y="170" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="58" font-weight="700" letter-spacing="6" fill="#39ff14">SOHAM</text>
-  <text x="500" y="220" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="20" fill="#c9d1d9">DEVELOPER  ·  LEARNER  ·  BUILDER</text>
-  <line x1="160" y1="265" x2="840" y2="265" stroke="#30363d" stroke-width="2"/>
-  <text x="500" y="315" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="17" fill="#8b949e">$ echo &quot;make useful things&quot;</text>
-  <text x="500" y="355" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="17" fill="#39ff14">make useful things</text>
+  <text x="500" y="170" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="44" font-weight="700" letter-spacing="3" fill="#39ff14" filter="url(#glow)" clip-path="url(#typeReveal)">SOHAMDP10-CODE</text>
+  <rect x="890" y="128" width="13" height="48" fill="#39ff14"><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="1s" repeatCount="indefinite"/></rect>
+  <text x="500" y="220" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="20" fill="#c9d1d9" opacity="0">DEVELOPER  ·  LEARNER  ·  BUILDER<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.7;1" dur="2.5s" fill="freeze"/></text>
+  <line x1="160" y1="265" x2="840" y2="265" stroke="#30363d" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.78;1" dur="2.5s" fill="freeze"/></line>
+  <text x="500" y="315" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="17" fill="#8b949e" opacity="0">$ echo &quot;make useful things&quot;<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.82;1" dur="2.5s" fill="freeze"/></text>
+  <text x="500" y="355" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="17" fill="#39ff14" opacity="0">make useful things<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.9;1" dur="2.5s" fill="freeze"/></text>
 </svg>
