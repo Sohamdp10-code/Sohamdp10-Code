@@ -1,0 +1,30 @@
+name: Daily activity log
+
+on:
+  schedule:
+    # 02:15 UTC daily. GitHub may delay scheduled workflows during busy periods.
+    - cron: "15 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  record-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      - name: Record this scheduled maintenance run
+        run: |
+          timestamp="$(date -u '+%Y-%m-%d %H:%M UTC')"
+          printf -- '- %s — scheduled activity-log maintenance run\n' "$timestamp" >> activity-log.md
+
+      - name: Commit the changed activity log
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add activity-log.md
+          git diff --cached --quiet || git commit -m "docs: record daily activity log"
+          git push
