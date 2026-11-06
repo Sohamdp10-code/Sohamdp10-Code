@@ -1,15 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="660" height="440" viewBox="0 0 660 440" role="img" aria-labelledby="title desc">
   <title id="title">Soham terminal avatar</title>
   <desc id="desc">An original green terminal-style abstract S monogram.</desc>
+  <defs>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
   <rect width="660" height="440" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
   <rect width="660" height="48" rx="16" fill="#161b22"/>
   <circle cx="30" cy="24" r="7" fill="#ff5f56"/><circle cx="54" cy="24" r="7" fill="#ffbd2e"/><circle cx="78" cy="24" r="7" fill="#27c93f"/>
   <text x="330" y="30" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="15" fill="#8b949e">sohamdp10-code@github: ~/profile</text>
   <g font-family="ui-monospace,Consolas,monospace" text-anchor="middle">
-    <text x="330" y="136" font-size="24" fill="#39ff14">┌──────────────────────┐</text>
-    <text x="330" y="173" font-size="24" fill="#39ff14">│  system: online      │</text>
-    <text x="330" y="210" font-size="24" fill="#39ff14">└──────────────────────┘</text>
-    <text x="330" y="338" font-size="142" font-weight="700" fill="#39ff14">S</text>
-    <text x="330" y="388" font-size="18" fill="#8b949e">build  ·  learn  ·  ship</text>
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.15;1" dur="2.6s" fill="freeze"/>
+      <text x="330" y="136" font-size="24" fill="#39ff14">┌──────────────────────┐</text>
+      <text x="330" y="173" font-size="24" fill="#39ff14">│  system: online      │</text>
+      <text x="330" y="210" font-size="24" fill="#39ff14">└──────────────────────┘</text>
+    </g>
+    <text x="330" y="338" font-size="142" font-weight="700" fill="#39ff14" filter="url(#glow)">S
+      <animate attributeName="opacity" values="0;0;1;0.88;1" keyTimes="0;0.28;0.4;0.55;1" dur="2.6s" fill="freeze"/>
+    </text>
+    <text x="330" y="388" font-size="18" fill="#8b949e" opacity="0">build  ·  learn  ·  ship
+      <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.68;1" dur="2.6s" fill="freeze"/>
+    </text>
+    <rect x="445" y="365" width="11" height="24" fill="#39ff14"><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="1s" repeatCount="indefinite"/></rect>
   </g>
 </svg>
