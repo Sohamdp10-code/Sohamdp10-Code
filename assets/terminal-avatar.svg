@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="440" viewBox="0 0 660 440" role="img" aria-labelledby="title desc">
+  <title id="title">Soham terminal avatar</title>
+  <desc id="desc">An original green terminal-style abstract S monogram.</desc>
+  <rect width="660" height="440" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <rect width="660" height="48" rx="16" fill="#161b22"/>
+  <circle cx="30" cy="24" r="7" fill="#ff5f56"/><circle cx="54" cy="24" r="7" fill="#ffbd2e"/><circle cx="78" cy="24" r="7" fill="#27c93f"/>
+  <text x="330" y="30" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="15" fill="#8b949e">sohamdp10-code@github: ~/profile</text>
+  <g font-family="ui-monospace,Consolas,monospace" text-anchor="middle">
+    <text x="330" y="136" font-size="24" fill="#39ff14">┌──────────────────────┐</text>
+    <text x="330" y="173" font-size="24" fill="#39ff14">│  system: online      │</text>
+    <text x="330" y="210" font-size="24" fill="#39ff14">└──────────────────────┘</text>
+    <text x="330" y="338" font-size="142" font-weight="700" fill="#39ff14">S</text>
+    <text x="330" y="388" font-size="18" fill="#8b949e">build  ·  learn  ·  ship</text>
+  </g>
+</svg>
