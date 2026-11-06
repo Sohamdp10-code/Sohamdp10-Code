@@ -36,6 +36,14 @@ is in my repositories and activity log.
 
 </div>
 
+<div align="center">
+
+<h3><code>sohamdp10-code@github ~ $ ./leetcode.sh --heatmap</code></h3>
+
+<a href="https://leetcode.com/u/Sohamdp10/"><img src="https://leetcard.jacoblin.cool/Sohamdp10?theme=dark&ext=heatmap&cache=3600" alt="Sohamdp10's live LeetCode submission heatmap" /></a>
+
+</div>
+
 ## `~/activity`
 
 ```text
@@ -55,11 +63,11 @@ The live graph below is supplied by GitHub.
 
 ## `~/daily-log`
 
-This repository keeps a small, dated record of scheduled maintenance. The automation updates it once per day with the workflow run time; it does not create empty commits or claim work that was not done.
+This repository keeps a dated record of newly accepted LeetCode solutions. The scheduled workflow checks the public LeetCode profile hourly and commits only when it finds a new accepted submission; it does not create empty commits or claim work that was not done.
 
 ```bash
 $ tail -n 1 activity-log.md
-<!-- New entries are written by the Daily activity log workflow. -->
+<!-- New entries are written by the LeetCode activity sync workflow. -->
 ```
 
 ## `~/connect`
