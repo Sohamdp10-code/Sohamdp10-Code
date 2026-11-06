@@ -1,6 +1,5 @@
 # Daily activity log
 
-This file records successful runs of the repository's scheduled maintenance workflow. It is intentionally modest: an entry means the automated log ran, not that a particular amount of development work occurred.
+This file records newly accepted LeetCode solutions detected from the public profile. It is intentionally modest: an entry means a solution was accepted, not that a particular amount of development work occurred.
 
-<!-- New entries are appended automatically below. -->
-
+<!-- New entries are appended by the LeetCode activity sync workflow. -->
