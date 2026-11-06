@@ -1,31 +1,81 @@
-name: Daily activity log
+name: LeetCode activity sync
 
 on:
   schedule:
-    # 02:15 UTC daily. GitHub may delay scheduled workflows during busy periods.
-    - cron: "15 2 * * *"
+    # Checks hourly. GitHub may delay scheduled workflows during busy periods.
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  record-run:
+  sync-accepted-solutions:
     runs-on: ubuntu-latest
     steps:
       - name: Check out profile repository
         uses: actions/checkout@v4
 
-      - name: Record this scheduled maintenance run
+      - name: Read recent public LeetCode acceptances
+        env:
+          LEETCODE_USERNAME: Sohamdp10
         run: |
-          timestamp="$(date -u '+%Y-%m-%d %H:%M UTC')"
-          printf -- '- %s — scheduled activity-log maintenance run\n' "$timestamp" >> activity-log.md
+          set -euo pipefail
+          query='query recentAccepted($username: String!) { recentAcSubmissionList(username: $username, limit: 100) { id title titleSlug timestamp } }'
+          payload="$(jq -nc --arg query "$query" --arg username "$LEETCODE_USERNAME" '{query: $query, variables: {username: $username}}')"
+          curl --fail --retry 3 --retry-delay 2 \
+            -A "Sohamdp10-code LeetCode activity sync" \
+            -H "Content-Type: application/json" \
+            -H "Referer: https://leetcode.com/u/$LEETCODE_USERNAME/" \
+            --data "$payload" \
+            https://leetcode.com/graphql/ \
+            --output leetcode-response.json
 
-      - name: Commit the changed activity log
+          if jq -e '.errors or (.data.recentAcSubmissionList | not)' leetcode-response.json >/dev/null; then
+            echo "LeetCode did not return the expected public submission data."
+            exit 1
+          fi
+
+          if jq -e '.data.recentAcSubmissionList | length == 0' leetcode-response.json >/dev/null; then
+            echo "No accepted submissions were returned."
+            exit 0
+          fi
+
+          state_file="leetcode-sync-state.json"
+          current_ids="$(jq -c '[.data.recentAcSubmissionList[].id] | unique | .[0:100]' leetcode-response.json)"
+
+          if [ ! -f "$state_file" ]; then
+            jq -n --arg username "$LEETCODE_USERNAME" --argjson ids "$current_ids" \
+              '{username: $username, seenSubmissionIds: $ids}' > "$state_file"
+            git add "$state_file"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: initialize LeetCode activity tracker"
+            git push
+            echo "Saved the current public submissions as the tracking baseline."
+            exit 0
+          fi
+
+          seen_ids="$(jq -c '.seenSubmissionIds // []' "$state_file")"
+          jq --argjson seen "$seen_ids" \
+            '[.data.recentAcSubmissionList[] | select(.id as $id | $seen | index($id) | not)] | sort_by(.timestamp | tonumber)' \
+            leetcode-response.json > new-submissions.json
+
+          if jq -e 'length == 0' new-submissions.json >/dev/null; then
+            echo "No new accepted submissions since the last sync."
+            exit 0
+          fi
+
+          jq -r '.[] | "- \(.timestamp | tonumber | strftime(\"%Y-%m-%d %H:%M UTC\")) — LeetCode accepted: [\(.title)](https://leetcode.com/problems/\(.titleSlug)/)"' \
+            new-submissions.json >> activity-log.md
+          jq -n --arg username "$LEETCODE_USERNAME" --argjson ids "$current_ids" \
+            '{username: $username, seenSubmissionIds: $ids}' > "$state_file"
+
+      - name: Commit newly detected solutions
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add activity-log.md
-          git diff --cached --quiet || git commit -m "docs: record daily activity log"
+          git add activity-log.md leetcode-sync-state.json
+          git diff --cached --quiet && exit 0
+          git commit -m "docs: record accepted LeetCode solutions"
           git push
-
