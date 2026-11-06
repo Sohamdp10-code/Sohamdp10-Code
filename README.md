@@ -2,21 +2,14 @@
 
 <div align="center">
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│  sohamdp10-code@github:~$ whoami                            │
-│  developer • lifelong learner • building in public           │
-└─────────────────────────────────────────────────────────────┘
-```
+<h3><code>sohamdp10-code@github ~ $ whoami</code></h3>
 
-# `>_ Sohamdp10-code`
-
-```text
-╔═════════════════════════════════════════════════════════════╗
-║  SYSTEM STATUS: ONLINE                                      ║
-║  MODE: BUILD • LEARN • SHIP                                 ║
-╚═════════════════════════════════════════════════════════════╝
-```
+<table>
+  <tr>
+    <td valign="top"><img src="./assets/terminal-avatar.svg" width="330" alt="Soham terminal avatar" /></td>
+    <td valign="top"><img src="./assets/soham-wordmark.svg" width="500" alt="SOHAM terminal wordmark" /></td>
+  </tr>
+</table>
 
 </div>
 
@@ -35,6 +28,14 @@ is in my repositories and activity log.
   <!-- Add only technologies you actually use below. -->
 </p>
 
+<div align="center">
+
+<h3><code>sohamdp10-code@github ~ $ ./contributions.sh</code></h3>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Sohamdp10-code&bg_color=0d1117&color=c9d1d9&line=39ff14&point=39ff14&area=true&hide_border=true" alt="Sohamdp10-code's public GitHub activity graph" />
+
+</div>
+
 ## `~/activity`
 
 ```text
@@ -50,7 +51,7 @@ The live graph below is supplied by GitHub.
   <img src="https://github-readme-streak-stats.herokuapp.com?user=Sohamdp10-code&hide_border=true&background=0D1117&ring=39FF14&fire=39FF14&currStreakLabel=39FF14&sideLabels=C9D1D9&dates=8B949E&sideNums=C9D1D9&currStreakNum=FFFFFF" alt="GitHub contribution streak" />
 </p>
 
-> The contributions calendar on GitHub is the source of truth. The stats cards above are optional third-party image services and may be unavailable at times.
+> GitHub's own contributions calendar is the source of truth. The activity graph and stats cards are optional third-party images built from public GitHub data and may be unavailable at times.
 
 ## `~/daily-log`
 
@@ -67,4 +68,3 @@ $ tail -n 1 activity-log.md
 $ echo "Find my work in the repositories tab."
 Find my work in the repositories tab.
 ```
-
