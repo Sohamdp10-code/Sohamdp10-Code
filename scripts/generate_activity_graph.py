@@ -87,18 +87,13 @@ def build_svg(html: str, days: dict[date, int]) -> str:
     step = 13
 
     total_text = f"GitHub public contribution activity · {year}"
-    total_text = (
-        f"{total_match.group(1)} contributions in the last year"
-        if total_match
-        else "GitHub public contribution calendar"
-    )
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" role="img" '
         f'aria-labelledby="title description">',
         '<title id="title">Soham GitHub contribution activity</title>',
-        '<desc id="description">A 53-week contribution heatmap generated from the public GitHub profile.</desc>',
+        '<desc id="description">A calendar-year contribution heatmap generated from the public GitHub profile.</desc>',
         '<rect width="100%" height="100%" rx="12" fill="#0d1117"/>',
         '<text x="18" y="25" fill="#39ff14" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="13" font-weight="700">SOHAM // CONTRIBUTION ACTIVITY</text>',
         f'<text x="18" y="43" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="10">{total_text} · public profile data</text>',
