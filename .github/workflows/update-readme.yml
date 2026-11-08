@@ -1,0 +1,40 @@
+name: Update README daily
+
+on:
+  schedule:
+    - cron: "30 18 * * *"   # every day at 18:30 UTC (00:00 IST)
+  workflow_dispatch:         # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Update the auto-updated section in README.md
+        run: |
+          NOW=$(date -u +"%Y-%m-%d %H:%M UTC")
+          python3 - <<EOF
+          import re
+          path = "README.md"
+          text = open(path, encoding="utf-8").read()
+          block = "<!-- AUTO-UPDATE:START -->\n🕒 Last auto-updated: $NOW\n<!-- AUTO-UPDATE:END -->"
+          pattern = r"<!-- AUTO-UPDATE:START -->.*?<!-- AUTO-UPDATE:END -->"
+          if re.search(pattern, text, flags=re.S):
+              text = re.sub(pattern, block, text, flags=re.S)
+          else:
+              text = text.rstrip() + "\n\n" + block + "\n"
+          open(path, "w", encoding="utf-8").write(text)
+          EOF
+
+      - name: Commit and push as github-actions bot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: daily README update [bot]" || echo "No changes to commit"
+          git push

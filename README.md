@@ -70,6 +70,14 @@ $ tail -n 1 activity-log.md
 <!-- New entries are appended by the LeetCode activity sync workflow. -->
 ```
 
+```text
+$ cat last-updated.txt
+```
+
+<!-- AUTO-UPDATE:START -->
+🕒 Last auto-updated: pending first run
+<!-- AUTO-UPDATE:END -->
+
 ## `~/connect`
 
 ```text
