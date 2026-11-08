@@ -101,7 +101,7 @@ def build_svg(html: str, days: dict[date, int]) -> str:
         '<desc id="description">A 53-week contribution heatmap generated from the public GitHub profile.</desc>',
         '<rect width="100%" height="100%" rx="12" fill="#0d1117"/>',
         '<text x="18" y="25" fill="#39ff14" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="13" font-weight="700">SOHAM // CONTRIBUTION ACTIVITY</text>',
-        f'<text x="18" y="43" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="10">{total_text} · refreshed {date.today().isoformat()}</text>',
+        f'<text x="18" y="43" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="10">{total_text} · public profile data</text>',
     ]
 
     # Month labels, placed at the first visible week of each month.
