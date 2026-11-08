@@ -32,7 +32,7 @@ is in my repositories and activity log.
 
 <h3><code>sohamdp10-code@github ~ $ ./contributions.sh</code></h3>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Sohamdp10-code&bg_color=0d1117&color=c9d1d9&line=39ff14&point=39ff14&area=true&hide_border=true" alt="Sohamdp10-code's public GitHub activity graph" />
+<img src="./activity-graph.svg" alt="Sohamdp10-code GitHub contribution activity graph" width="780" />
 
 </div>
 
