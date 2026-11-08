@@ -72,10 +72,12 @@ def fetch_calendar(username: str) -> tuple[str, dict[date, int]]:
 
 
 def build_svg(html: str, days: dict[date, int]) -> str:
-    latest = max(days)
-    # Align the 53-week grid to Sunday through Saturday.
-    grid_end = latest + timedelta(days=(5 - latest.weekday()) % 7)
-    grid_start = grid_end - timedelta(days=370)
+    year = date.today().year
+    year_start = date(year, 1, 1)
+    year_end = date(year, 12, 31)
+    # Align the calendar-year grid to complete Sunday-through-Saturday weeks.
+    grid_start = year_start - timedelta(days=(year_start.weekday() + 1) % 7)
+    grid_end = year_end + timedelta(days=(5 - year_end.weekday()) % 7)
 
     width = 780
     height = 190
@@ -84,9 +86,7 @@ def build_svg(html: str, days: dict[date, int]) -> str:
     cell = 10
     step = 13
 
-    total_match = re.search(
-        r"([\d,]+)\s+contributions?\s+in the last year", html, re.IGNORECASE
-    )
+    total_text = f"GitHub public contribution activity · {year}"
     total_text = (
         f"{total_match.group(1)} contributions in the last year"
         if total_match
@@ -127,7 +127,7 @@ def build_svg(html: str, days: dict[date, int]) -> str:
             f'SFMono-Regular, Consolas, monospace" font-size="9">{label}</text>'
         )
 
-    for offset in range(371):
+    for offset in range((grid_end - grid_start).days + 1):
         day = grid_start + timedelta(days=offset)
         week = offset // 7
         weekday = offset % 7  # Sunday = first row
