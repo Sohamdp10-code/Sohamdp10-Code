@@ -15,17 +15,24 @@
 
 ```bash
 $ cat about.txt
-Hi — I’m Soham. I use GitHub to learn, build, and document useful work.
-This profile is a work in progress; the best place to see what I am doing
-is in my repositories and activity log.
+Hi, I'm Soham, a Computer Science & Engineering (AI & ML) student.
+I focus on building reliable software, strengthening my problem-solving
+through data structures and algorithms, and documenting my work openly.
+Explore my repositories to see what I'm building.
 ```
 
 ## `~/stack`
 
 <p>
-  <img src="https://img.shields.io/badge/terminal-111827?style=for-the-badge&logo=gnometerminal&logoColor=39ff14" alt="Terminal" />
+  <img src="https://img.shields.io/badge/Terminal-111827?style=for-the-badge&logo=gnometerminal&logoColor=white" alt="Terminal" />
   <img src="https://img.shields.io/badge/GitHub-111827?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  <!-- Add only technologies you actually use below. -->
+  <img src="https://img.shields.io/badge/C%2B%2B-111827?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
+  <img src="https://img.shields.io/badge/JavaScript-111827?style=for-the-badge&logo=javascript&logoColor=white" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Linux-111827?style=for-the-badge&logo=linux&logoColor=white" alt="Linux" />
+  <img src="https://img.shields.io/badge/SQL-111827?style=for-the-badge&logo=mysql&logoColor=white" alt="SQL" />
+  <img src="https://img.shields.io/badge/Git-111827?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/HTML5-111827?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-111827?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
 </p>
 
 <div align="center">
