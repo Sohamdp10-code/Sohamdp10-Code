@@ -2,8 +2,6 @@
 
 <div align="center">
 
-<h3><code>sohamdp10-code@github ~ $ whoami</code></h3>
-
 <table>
   <tr>
     <td valign="top"><img src="./assets/terminal-avatar.svg" width="330" alt="Soham terminal avatar" /></td>
@@ -13,13 +11,8 @@
 
 </div>
 
-```bash
-$ cat about.txt
-Hi, I'm Soham, a Computer Science & Engineering (AI & ML) student.
-I focus on building reliable software, strengthening my problem-solving
-through data structures and algorithms, and documenting my work openly.
+Hi, I'm Soham, a Computer Science & Engineering (AI & ML) student. I focus on building reliable software, strengthening my problem-solving through data structures and algorithms, and documenting my work openly.
 Explore my repositories to see what I'm building.
-```
 
 ## `~/stack`
 
@@ -37,26 +30,17 @@ Explore my repositories to see what I'm building.
 
 <div align="center">
 
-<h3><code>sohamdp10-code@github ~ $ ./contributions.sh</code></h3>
-
 <img src="./activity-graph.svg" alt="Sohamdp10-code GitHub contribution activity graph" width="780" />
 
 </div>
 
 <div align="center">
 
-<h3><code>sohamdp10-code@github ~ $ ./leetcode.sh --heatmap</code></h3>
-
 <a href="https://leetcode.com/u/Sohamdp10/"><img src="https://leetcard.jacoblin.cool/Sohamdp10?theme=dark&ext=heatmap&cache=3600" alt="Sohamdp10's live LeetCode submission heatmap" /></a>
 
 </div>
 
 ## `~/activity`
-
-```text
-$ ./contributions.sh --graph
-The live graph below is supplied by GitHub.
-```
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Sohamdp10-code&show_icons=true&hide_border=true&bg_color=0d1117&title_color=39ff14&icon_color=39ff14&text_color=c9d1d9" alt="Sohamdp10-code's GitHub statistics" />
@@ -72,25 +56,13 @@ The live graph below is supplied by GitHub.
 
 The [activity log](./activity-log.md) keeps a dated record of newly accepted LeetCode solutions. GitHub Actions checks the public LeetCode profile hourly and logs newly accepted submissions. Separate scheduled workflows also run daily to append a maintenance line to the log and refresh the timestamp below, so some bot commits are routine upkeep rather than new solutions.
 
-```bash
-$ tail -n 1 activity-log.md
-<!-- New entries are appended by the LeetCode activity sync workflow. -->
-```
-
-```text
-$ cat last-updated.txt
-```
-
 <!-- AUTO-UPDATE:START -->
 🕒 Last auto-updated: pending first run
 <!-- AUTO-UPDATE:END -->
 
 ## `~/connect`
 
-```text
-$ echo "Find my work in the repositories tab."
-Find my work in the repositories tab.
-```
+Find my work in the repositories tab, or reach me by email:
 
 <p>
   <a href="mailto:sohamgaworkin@yahoo.com"><img src="https://img.shields.io/badge/Email-sohamgaworkin%40yahoo.com-111827?style=for-the-badge&logo=gmail&logoColor=39ff14" alt="Email: sohamgaworkin@yahoo.com" /></a>
