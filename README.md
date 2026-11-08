@@ -91,3 +91,7 @@ $ cat last-updated.txt
 $ echo "Find my work in the repositories tab."
 Find my work in the repositories tab.
 ```
+
+<p>
+  <a href="mailto:sohamgaworkin@yahoo.com"><img src="https://img.shields.io/badge/Email-sohamgaworkin%40yahoo.com-111827?style=for-the-badge&logo=gmail&logoColor=39ff14" alt="Email: sohamgaworkin@yahoo.com" /></a>
+</p>
