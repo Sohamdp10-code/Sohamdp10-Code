@@ -63,9 +63,7 @@ The live graph below is supplied by GitHub.
 
 ## `~/daily-log`
 
-This repository keeps a dated record of newly accepted LeetCode solutions. The scheduled workflow checks the public LeetCode profile hourly and commits only when it finds a new accepted submission; it does not create empty commits or claim work that was not done.
-
-The [activity log](./activity-log.md) records newly accepted LeetCode solutions. GitHub Actions checks the public profile hourly and commits only when it detects a new accepted submission; no empty or scheduled placeholder commits are created.
+The [activity log](./activity-log.md) keeps a dated record of newly accepted LeetCode solutions. GitHub Actions checks the public LeetCode profile hourly and commits only when it detects a new accepted submission; it does not create empty or scheduled placeholder commits.
 
 ```bash
 $ tail -n 1 activity-log.md
