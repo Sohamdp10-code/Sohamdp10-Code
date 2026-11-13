@@ -2,7 +2,8 @@ name: Update README daily
 
 on:
   schedule:
-    - cron: "30 18 * * *"   # every day at 18:30 UTC (00:00 IST)
+    - cron: "17 19 * * *"   # 00:47 IST (odd minute: avoids busy :00/:30 slots)
+    - cron: "43 3 * * *"    # 09:13 IST backup in case the first run is dropped or delayed
   workflow_dispatch:         # lets you run it manually from the Actions tab
 
 permissions:
@@ -17,7 +18,7 @@ jobs:
 
       - name: Update the auto-updated section in README.md
         run: |
-          NOW=$(date -u +"%Y-%m-%d %H:%M UTC")
+          NOW=$(TZ=Asia/Kolkata date +"%Y-%m-%d IST")
           python3 - <<EOF
           import re
           path = "README.md"
